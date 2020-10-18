@@ -26,10 +26,9 @@ function init() {
   var slide2 = new Slide(width, height, 'in');
   var l2 = new THREE.ImageLoader();
 	l2.setCrossOrigin('Anonymous');
-	l2.load('https://ibb.co/wyTvK2w', function(img) {
+	l2.load('https://i.ibb.co/4WcQj0Y/bow-pic.jpg', function(img) {
 		slide2.setImage(img);
 	})
-	
   root.scene.add(slide2);
 
   var tl = new TimelineMax({repeat:-1, repeatDelay:1.0, yoyo: true});
