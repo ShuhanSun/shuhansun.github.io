@@ -7,13 +7,24 @@ canvas {
 	background-image: radial-gradient(#666, #333);
 }
 
-#instructions {
+#name {
+	position: absolute;
+	color: #fff;
+	top: 0;
+	padding-bottom: 6px;
+	font-family: sans-serif;
+	width: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+#list {
 	position: absolute;
 	color: #fff;
 	bottom: 0;
 	padding-bottom: 6px;
 	font-family: sans-serif;
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	pointer-events: none;
 }
