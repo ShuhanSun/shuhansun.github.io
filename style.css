@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	overflow: hidden;
+	background-color: rgba(116, 46, 15, 0.77);
 }
 
 canvas {
@@ -15,7 +16,6 @@ canvas {
 	font-family: sans-serif;
 	width: 100%;
 	text-align: center;
-	pointer-events: none;
 }
 
 #list {
@@ -26,5 +26,12 @@ canvas {
 	font-family: sans-serif;
 	width: 100%;
 	text-align: left;
-	pointer-events: none;
+}
+
+#w3v{
+	position: absolute;
+	text-align: right;
+	bottom: 0;
+	padding-bottom: 6px;
+	width: 100%;
 }
