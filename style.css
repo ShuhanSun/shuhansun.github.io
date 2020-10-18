@@ -10,7 +10,7 @@ canvas {
 #name {
 	position: absolute;
 	color: #fff;
-	top: 0;
+	bottom: 0;
 	padding-bottom: 6px;
 	font-family: sans-serif;
 	width: 100%;
