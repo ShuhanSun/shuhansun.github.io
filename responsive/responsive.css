@@ -1,7 +1,19 @@
-body{
-
+.grid-container{
+    display: grid;
+    grid-template-rows: 80px 80px 200px 80px;
 }
-
+@media screen and (min-width:600px) {
+    .column2{
+        flex: 50%;
+    }
+}
+@media screen and (max-width:599px) {
+    .column2{
+        flex-direction: column;
+        width: 100%;
+        flex: 100%;
+    }
+}
 .header{
     font-size: 2em;
     background-color: #58c5cc;
@@ -11,37 +23,39 @@ body{
 
 #menu-bar{
     background-color: #0e4b3c;
-    display: block;
+    width: 100%;
+    display: flex;
 }
 .menu{
     color: white;
     background-color: #0e4b3c;
     border-right: black solid;
     width: 100pt;
-    display: inline;
-    float: left;
+    /*height: 50px;*/
     text-align: center;
     padding: 15pt 0 15pt;
 }
 
+.column-container{
+    clear: left;
+    display: flex;
+    flex-wrap: wrap;
+}
 .column{
-    height: 300pt;
-    display: inline;
-    float: left;
-    padding: 10pt;
+    height: 200pt;
+    padding: 0;
 }
 #column1{
-    clear: left;
     background-color: #666666;
-    width: 200pt;
+    width: 25%;
 }
 #column2{
     background-color: #999999;
-    width: 200pt;
+    width: 50%;
 }
 #column3{
     background-color: #d1d1d1;
-    width: 200pt;
+    width: 25%;
 }
 
 .footer{
