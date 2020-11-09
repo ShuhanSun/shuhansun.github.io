@@ -9,13 +9,14 @@ canvas {
 }
 
 #name {
-	position: absolute;
+	position: fixed;
 	color: #fff;
 	bottom: 0;
 	padding-bottom: 6px;
 	font-family: sans-serif;
-	width: 100%;
+	width: auto;
 	text-align: center;
+	left: 30%;
 }
 
 #list {
