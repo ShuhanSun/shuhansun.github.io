@@ -19,19 +19,20 @@ canvas {
 }
 
 #list {
-	position: absolute;
+	position: fixed;
 	color: #fff;
 	bottom: 0;
 	padding-bottom: 6px;
 	font-family: sans-serif;
-	width: 100%;
+	width: auto;
 	text-align: left;
+	left: 0;
 }
 
 #w3v{
-	position: absolute;
-	text-align: right;
+	position: fixed;
 	bottom: 0;
+	right: 0;
 	padding-bottom: 6px;
-	width: 100%;
+	width: auto;
 }
