@@ -50,7 +50,12 @@ Also do the same thing using Object.create. When using Object.create you will ne
 factory function instead of a function constructor in order to pass parameters such as
 ‘name’ to be set in the prototype.*/
 function f3(){
-    let Teacher = {}
+    let Person = {
+
+    }
+    let Teacher = {
+
+    }
 }
 
 /*
