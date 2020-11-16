@@ -49,27 +49,41 @@ is now teaching [subject]. Create a Teacher object and call its teach method.
 Also do the same thing using Object.create. When using Object.create you will need a
 factory function instead of a function constructor in order to pass parameters such as
 ‘name’ to be set in the prototype.*/
-function f3(){
-    let Person = {
-
+function f3() {
+    const Person = {
+        name: "unknown"
     }
-    let Teacher = {
 
+    const teacher = Object.create(Person);
+    teacher.teach = function (subject) {
+        console.log(this.name + " is now teaching " + subject);
     }
+
+    let t = (function (name) {
+        let t = Object.create(teacher);
+        t.name = name
+        return t;
+    }("Bob"));
+
+    t.teach("math");
 }
+
+f3();
 
 /*
 * Exercise 4:
 Write code that will create person, student, and professor objects.
 • Person objects have
-o name and age fields
-o a greeting method that prints out: “Greetings, my name is [name] and I am
-[age] years old.”
-o a salute method that prints out: “Good morning!, and in case I dont see you,
-good afternoon, good evening and good night!”
+    o name and age fields
+    o a greeting method that prints out: “Greetings, my name is [name] and I am
+    [age] years old.”
+    o a salute method that prints out: “Good morning!, and in case I dont see you,
+    good afternoon, good evening and good night!”
+    *
 • Student objects inherit name, age, and salute from person. They also have a field
 ‘major’ and have their own greeting method. Their greeting is “Hey, my name is
 [name] and I am studying [major]. The greeting should be output to the console.
+*
 • Professor objects inherit name, age, and salute from person. They also have a field
 ‘department’ and have their own greeting method. Their salutation is “Good day,
 my name is [name] and I am in the [department] department.” Output it to the
@@ -78,3 +92,45 @@ console.
 methods on each.
 • Do this exercise once using the object prototype approach for inheritance and then
 using the function constructor approach.*/
+function f4() {
+    const Person = {
+        name: "unknow",
+        age: 0,
+        greeting: function () {
+            console.log("Greetings, my name is " + this.name + " and I am " + this.age + " years old.")
+        },
+        salute: function () {
+            console.log("Good morning!, and in case I dont see you, good afternoon, good evening and good night!")
+        }
+    }
+    const Student = Object.create(Person);
+    Student.major = "unknown";
+    Student.greeting = function () {
+        console.log("Hey, my name is " + this.name + " and I am studying " + this.major);
+    }
+    const Professor = Object.create(Person);
+    Professor.department = "unknown";
+    Professor.greeting = function () {
+        console.log("Hey, my name is " + this.name + " and I in the " + this.department + " department.");
+    }
+
+    let professor1 = (function (name, department) {
+        let t = Object.create(Professor);
+        t.name = name
+        t.department = department;
+        return t;
+    }("Bob", "CS"));
+    professor1.greeting();
+    professor1.salute();
+
+    let stu1 = (function (name, major) {
+        let t = Object.create(Student);
+        t.name = name
+        t.major = major;
+        return t;
+    }("Shuhan", "WAP"));
+    stu1.greeting();
+    stu1.salute();
+}
+
+f4();
