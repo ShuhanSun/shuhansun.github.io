@@ -1,48 +1,77 @@
-.container
-{
+.container {
     width: 960px;
     margin: 0 auto;
 }
 
-#text-area{
-	font-family: monospace;
-    font-size: 12pt;
-	width: 100%;
+#text-area {
+    font-family: monospace;
+    width: 100%;
 }
 
-fieldset{
-     border: 5px solid black;
-     display: inline;
+fieldset {
+    border: 5px solid black;
+    display: inline;
 }
+
 legend {
-   text-align: left;
+    text-align: left;
 }
-article{
+
+article {
     alignment-adjust: central;
 }
-button{
+
+button {
     width: 47%;
 }
-body{
+
+body {
     font-weight: bold;
     text-align: center;
     margin-left: auto;
-    margin-right:auto;
-    background-color:#CCCCFF;
+    margin-right: auto;
+    background-color: #CCCCFF;
     font-family: sans-serif;
     font-size: 14pt;
-   
+
 }
-header{
+
+header {
     font-size: 32pt;
     font-weight: bold;
-    margin:0px;
-    
+    margin: 0px;
+
 }
-select{
-    width:98%;
+
+select {
+    width: 98%;
 }
-#validate{
-    right:0px;
+
+#validate {
+    right: 0px;
     position: fixed;
+}
+
+.Tiny {
+    font-size: 7pt
+}
+
+.Small {
+    font-size: 10pt
+}
+
+.Medium {
+    font-size: 12pt
+}
+
+.Large {
+    font-size: 16pt
+}
+
+.ExtraLarge {
+    font-size: 24pt
+}
+
+.XXL {
+    font-size: 32pt
 }
