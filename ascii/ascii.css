@@ -8,6 +8,11 @@
     width: 100%;
 }
 
+img{
+    height: 31px;
+    width: 88px;
+}
+
 fieldset {
     border: 5px solid black;
     display: inline;
