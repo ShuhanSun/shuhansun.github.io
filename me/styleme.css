@@ -1,4 +1,9 @@
-
+.RedC{
+    color: red;
+}
+.BluC{
+    color: blue;
+}
 body{
     background-color: blanchedalmond;
     font-family: "Arial Black", serif;
