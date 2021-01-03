@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "quiz", urlPatterns = "/quiz")
 public class QuizServlet extends HttpServlet {
@@ -21,72 +20,89 @@ public class QuizServlet extends HttpServlet {
         doQuiz(req, resp);
     }
 
-    private void doQuiz(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    private void doQuiz(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         Quiz sessQuiz = (Quiz)req.getSession().getAttribute("quiz");
         if (sessQuiz == null) {
             sessQuiz = new Quiz();
             req.getSession().setAttribute("quiz", sessQuiz);
         }
 
-        if (sessQuiz.getNumCorrect() == sessQuiz.getNumQuestions()) {
-            genQuizOverPage(resp.getWriter());
+        // check age
+        if (!checkAge(req)) {
+            req.setAttribute("sessQuiz", sessQuiz);
+            genQuizPage(req, resp);
             return;
         }
 
-        String answer = req.getParameter("txtAnswer");
-        boolean error = false;
-        if (answer != null && answer.length() > 0) {
-            if (sessQuiz.isCorrect(answer)) {
-                sessQuiz.scoreAnswer();
-            }
-            else {
-                error = true;
-            }
-        }
-
-        if (sessQuiz.getNumCorrect() == sessQuiz.getNumQuestions()) {
-            genQuizOverPage(resp.getWriter());
+        // check if quiz over
+        if (sessQuiz.isOver()) {
+            req.setAttribute("finalGrade", sessQuiz.getFinalGrade());
+            genQuizOverPage(req, resp);
             return;
         }
 
-        String currQuest = sessQuiz.getCurrentQuestion();
-        genQuizPage(sessQuiz, resp.getWriter(), currQuest, error, answer);
-    }
+        // submit by pushing the btnNext button
+        if ("Next".equals(req.getParameter("btnNext"))) {
+            // check answer is correct
+            String answer = req.getParameter("txtAnswer");
+            boolean error = false;
+            if (answer != null && answer.length() > 0) {
+                boolean correct = sessQuiz.isCorrect(answer);
+                if (correct) {
+                    sessQuiz.scoreAnswer();
+                }
+                else {
+                    error = true;
+                    if (sessQuiz.isDoneTry()) {
+                        req.setAttribute("rightAnswer", sessQuiz.getCurrentAnswer());
+                    }
+                }
 
+                if (correct || sessQuiz.isDoneTry()) {
+                    sessQuiz.tryNext();
+                }
+            }
+            req.setAttribute("error", error);
 
-    private void genQuizPage(app.Quiz sessQuiz, PrintWriter out, String currQuest, boolean error, String answer) {
-
-        out.print("<html>");
-        out.print("<head>");
-        out.print("	<title>NumberQuiz</title>");
-        out.print("</head>");
-        out.print("<body>");
-        out.print("	<form method='post'>");
-        out.print("		<h3>Have fun with NumberQuiz!</h3>");
-        out.print("<p>Your current score is: ");
-        out.print(sessQuiz.getNumCorrect() + "</br></br>");
-        out.print("<p>Guess the next number in the sequence! ");
-        out.print(currQuest + "</p>");
-
-        out.print("<p>Your answer:<input type='text' name='txtAnswer' value='' /></p> ");
-
-        /* if incorrect, then print out error message */
-        if (error && (answer != null)) {  //REFACTOR?-- assumes answer null only when first open page
-            out.print("<p style='color:red'>Your last answer was not correct! Please try again</p> ");
+            // check if quiz over
+            if (sessQuiz.isOver()) {
+                req.setAttribute("finalGrade", sessQuiz.getFinalGrade());
+                genQuizOverPage(req, resp);
+                return;
+            }
         }
-        out.print("<p><input type='submit' name='btnNext' value='Next' /></p> ");
+        else if ("Hint".equals(req.getParameter("hint"))) {
+            req.setAttribute("hint", sessQuiz.getHint());
+        }
 
-        out.print("</form>");
-        out.print("</body></html>");
+        req.setAttribute("sessQuiz", sessQuiz);
+        genQuizPage(req, resp);
     }
 
-    private void genQuizOverPage(PrintWriter out) {
-        out.print("<html> ");
-        out.print("<head >");
-        out.print("<title>NumberQuiz is over</title> ");
-        out.print("</head> ");
-        out.print("<body> ");
-        out.print("<p style='color:red'>The number quiz is over!</p>	</body> ");
-        out.print("</html> ");
+    private boolean checkAge(HttpServletRequest req) {
+        String ageStr = req.getParameter("age");
+        int age;
+        try {
+            age = Integer.parseInt(ageStr);
+        }
+        catch (NumberFormatException e) {
+            req.setAttribute("ageErrorMsg", "This age field is required, must enter an integer");
+            return false;
+        }
+        if (age < 4 || age > 100) {
+            req.setAttribute("ageErrorMsg", "The age is must between 4 and 100");
+            return false;
+        }
+
+        req.setAttribute("age", age);
+        return true;
+    }
+
+    private void genQuizPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/quiz.jsp").forward(req, resp);
+    }
+
+    private void genQuizOverPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/over.jsp").forward(req, resp);
     }
 }
