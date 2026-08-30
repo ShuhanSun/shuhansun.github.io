@@ -3,70 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shuhan Sun — software engineer and AI researcher focused on AI agent safety, secure decision-making, and reliable AI-enabled systems.">
-  <title>Shuhan Sun | AI Research & Engineering</title>
+  <meta name="description" content="Shuhan Sun is a software engineer and PhD student in Artificial Intelligence focused on AI agent safety, secure tool use, prompt-injection defense, and reliable decision systems.">
+  <meta name="author" content="Shuhan Sun">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shuhansun.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shuhan Sun | AI Agent Safety & Software Systems">
+  <meta property="og:description" content="Research and engineering at the intersection of AI agent safety, secure decision-making, and large-scale software systems.">
+  <meta property="og:url" content="https://shuhansun.github.io/">
+  <title>Shuhan Sun | AI Agent Safety & Software Systems</title>
   <link rel="stylesheet" href="./style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shuhan Sun",
+    "url": "https://shuhansun.github.io/",
+    "sameAs": [
+      "https://github.com/ShuhanSun",
+      "https://orcid.org/0009-0004-0657-4600"
+    ],
+    "jobTitle": "Senior Software Engineer",
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "AI Agent Safety",
+      "Prompt Injection",
+      "AI Security",
+      "Decision Systems",
+      "Software Engineering"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main class="page-shell">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <main id="main-content" class="page-shell">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">AI Research · Software Engineering</p>
+        <p class="eyebrow">AI Agent Safety · Reliable AI Systems · Software Engineering</p>
         <h1>Shuhan Sun</h1>
         <p class="lead">
-          Software engineer and PhD student in Artificial Intelligence, interested in building AI systems that are useful, reliable, and safe in real-world environments.
+          Senior software engineer and PhD student in Artificial Intelligence working at the intersection of large-scale production systems and trustworthy AI.
         </p>
         <p class="focus">
-          My current research interests center on <strong>AI agent safety</strong>, including unsafe tool execution, prompt-injection risks, policy-aware decision making, and evaluation of agent behavior under adversarial or constrained conditions.
+          My research focuses on a practical question: <strong>how can AI agents take useful actions in real systems without becoming an unsafe execution layer?</strong> I am particularly interested in tool-use safety, prompt injection, policy-aware decision making, and realistic evaluation of agent behavior.
         </p>
-        <nav class="links" aria-label="Profile links">
-          <a href="https://github.com/ShuhanSun" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="noreferrer">ORCID</a>
+        <nav class="links" aria-label="Primary links">
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="me noreferrer">ORCID</a>
+          <a href="https://github.com/ShuhanSun" target="_blank" rel="me noreferrer">GitHub</a>
         </nav>
       </div>
       <div class="hero-photo-wrap">
-        <img class="hero-photo" src="pic/me.png" alt="Shuhan Sun">
+        <img class="hero-photo" src="pic/me.png" alt="Portrait of Shuhan Sun">
       </div>
     </header>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        I work at the intersection of large-scale software systems and applied artificial intelligence. My engineering experience includes backend platforms, experimentation, recommendation and decision orchestration, guardrails, and production systems. I am currently pursuing doctoral study in Artificial Intelligence while developing a research agenda around trustworthy AI agents and AI-enabled decision systems.
-      </p>
+    <section id="about" class="section intro-section">
+      <div class="section-heading">
+        <p class="section-kicker">Background</p>
+        <h2>Engineering experience informing AI safety research</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          I build backend platforms and decision systems that operate under real production constraints. That experience shapes my research perspective: AI safety is not only a model-level problem. Once an agent can call tools, modify data, trigger workflows, or make decisions, safety depends on the full execution path—including instructions, permissions, policies, system state, and downstream effects.
+        </p>
+        <p>
+          I am pursuing a PhD in Artificial Intelligence and developing research around secure, constraint-aware AI agents and evaluation methods that expose failures before deployment.
+        </p>
+      </div>
     </section>
 
     <section id="research" class="section">
-      <h2>Research Interests</h2>
-      <div class="grid">
+      <div class="section-heading">
+        <p class="section-kicker">Research</p>
+        <h2>Research interests</h2>
+        <p class="section-summary">I am most interested in AI systems that do more than generate text: agents that observe, decide, and act.</p>
+      </div>
+
+      <div class="grid research-grid">
         <article class="card">
-          <h3>AI Agent Safety</h3>
-          <p>Detecting and preventing unsafe agent actions, especially when agents interact with tools, APIs, files, browsers, and external systems.</p>
+          <span class="card-index">01</span>
+          <h3>AI Agent Execution Safety</h3>
+          <p>Methods for determining whether a proposed agent action is safe, authorized, policy-compliant, and appropriate before execution.</p>
         </article>
         <article class="card">
-          <h3>Prompt Injection & Adversarial Agents</h3>
-          <p>Understanding how untrusted instructions propagate through agent workflows and designing defenses that remain effective under realistic attacks.</p>
+          <span class="card-index">02</span>
+          <h3>Prompt Injection & Instruction Integrity</h3>
+          <p>Defenses against untrusted or adversarial instructions entering through webpages, files, messages, retrieved context, or connected tools.</p>
         </article>
         <article class="card">
-          <h3>Constraint-Aware Decision Systems</h3>
-          <p>Decision orchestration that optimizes utility while respecting safety constraints, policies, business rules, user preferences, and system limits.</p>
+          <span class="card-index">03</span>
+          <h3>Constraint-Aware Decision Orchestration</h3>
+          <p>Decision layers that optimize utility while enforcing safety constraints, permissions, business rules, user preferences, and operational limits.</p>
         </article>
         <article class="card">
-          <h3>Evaluation & Benchmarks</h3>
-          <p>Building reproducible evaluations for agent reliability, policy compliance, attack resistance, and failure modes beyond conventional model accuracy.</p>
+          <span class="card-index">04</span>
+          <h3>Agent Evaluation & Benchmarks</h3>
+          <p>Reproducible evaluations for attack resistance, unsafe action rates, policy compliance, recovery behavior, and reliability under realistic tool use.</p>
         </article>
+      </div>
+
+      <div class="research-questions">
+        <h3>Questions I am exploring</h3>
+        <ul>
+          <li>Can an agent reliably recognize dangerous execution paths before taking an irreversible action?</li>
+          <li>How should systems separate trusted objectives from untrusted instructions encountered during a workflow?</li>
+          <li>What benchmark design best predicts whether an agent will remain safe when connected to real tools and changing environments?</li>
+        </ul>
       </div>
     </section>
 
     <section id="publications" class="section">
-      <h2>Publications</h2>
-      <p class="muted">Research manuscripts and publications will be listed here as they become available.</p>
+      <div class="section-heading">
+        <p class="section-kicker">Scholarship</p>
+        <h2>Publications & research artifacts</h2>
+      </div>
+      <div class="publication-placeholder">
+        <p><strong>Research in progress.</strong> Manuscripts, preprints, code, datasets, and reproducibility artifacts will be listed here as they become public.</p>
+        <p class="muted">Persistent researcher identifier: <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="noreferrer">ORCID 0009-0004-0657-4600</a>.</p>
+      </div>
     </section>
 
-    <section id="education" class="section two-column">
+    <section id="experience" class="section two-column">
       <div>
+        <p class="section-kicker">Industry</p>
+        <h2>Experience</h2>
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div>
+            <h3>Senior Software Engineer · eBay</h3>
+            <p class="meta">Large-scale backend and decision systems</p>
+            <p>Engineering work spanning decision orchestration, experimentation, recommendation systems, guardrails, platform services, and production reliability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="education">
+        <p class="section-kicker">Academic</p>
         <h2>Education</h2>
         <div class="item">
           <h3>PhD in Artificial Intelligence</h3>
@@ -81,20 +158,27 @@
           <p>Hangzhou Dianzi University</p>
         </div>
       </div>
+    </section>
+
+    <section class="section profile-strip" aria-labelledby="profiles-heading">
       <div>
-        <h2>Current Directions</h2>
-        <ul class="clean-list">
-          <li>Secure and policy-aware AI agents</li>
-          <li>Agent tool-use risk evaluation</li>
-          <li>Prompt-injection defenses</li>
-          <li>AI decision orchestration</li>
-          <li>Real-world evaluation methodology</li>
-        </ul>
+        <p class="section-kicker">Identity</p>
+        <h2 id="profiles-heading">Research profiles</h2>
+      </div>
+      <div class="profile-links">
+        <a class="profile-link" href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="me noreferrer">
+          <span>ORCID</span>
+          <strong>0009-0004-0657-4600</strong>
+        </a>
+        <a class="profile-link" href="https://github.com/ShuhanSun" target="_blank" rel="me noreferrer">
+          <span>GitHub</span>
+          <strong>@ShuhanSun</strong>
+        </a>
       </div>
     </section>
 
     <footer>
-      <p>© 2026 Shuhan Sun · <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="noreferrer">ORCID 0009-0004-0657-4600</a></p>
+      <p>© 2026 Shuhan Sun. Built as a public research and engineering profile.</p>
     </footer>
   </main>
 </body>
