@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shuhan Sun Home Page</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shuhan Sun — software engineer and AI researcher focused on AI agent safety, secure decision-making, and reliable AI-enabled systems.">
+  <title>Shuhan Sun | AI Research & Engineering</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Research · Software Engineering</p>
+        <h1>Shuhan Sun</h1>
+        <p class="lead">
+          Software engineer and PhD student in Artificial Intelligence, interested in building AI systems that are useful, reliable, and safe in real-world environments.
+        </p>
+        <p class="focus">
+          My current research interests center on <strong>AI agent safety</strong>, including unsafe tool execution, prompt-injection risks, policy-aware decision making, and evaluation of agent behavior under adversarial or constrained conditions.
+        </p>
+        <nav class="links" aria-label="Profile links">
+          <a href="https://github.com/ShuhanSun" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="noreferrer">ORCID</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+        </nav>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="pic/me.png" alt="Shuhan Sun">
+      </div>
+    </header>
 
-<div id="name">
-    <a href="ani/index.html">
-        <img src="pic/me.png" height=480 alt="me"/>
-    </a>
-    <h1>Shuhan Sun</h1>
-    <h2>Email: shuhan.sun@miu.edu</h2>
-</div>
-<div id="list">
-    <ul>
-        <li><a href="index.html">Lab01: The Home Page</a></li>
-        <li><a href="me/aboutme.html">Lab02: About Me</a></li>
-        <li><a href="recipe/pie.html">Lab03: Recipe</a></li>
-        <li><a href="movie/tmnt.htm">Lab04: Movie Review</a></li>
-        <li><a href="lab5/FirstJSfunctions.html">Lab05</a> </li>
-        <li><a href="lab8/FirstJSfunctions.html">Lab08</a> </li>
-        <li><a href="ascii/ascii.html">Ascii Animation</a> </li>
-        <li><a href="jquery/tasks.html">Task Tracking</a> </li>
-        <li><a href="circle/circle.html">Circle</a> </li>
-        <li><a href="jsonLab/post.html">json ajax</a> </li>
-    </ul>
-</div>
-<div id="w3v">
-    <p>
-        <a href="https://validator.w3.org/check/referer">
-            <img src="pic/w3c-html.png" alt="html validator"/>
-        </a>
-    </p>
-    <p>
-        <a href="http://jigsaw.w3.org/css-validator/validator?uri=shuhansun.github.io&profile=css3svg&usermedium=all&warning=1&vextwarning=">
-            <img src="pic/w3c-css.png" alt="Valid CSS!"/>
-        </a>
-    </p>
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        I work at the intersection of large-scale software systems and applied artificial intelligence. My engineering experience includes backend platforms, experimentation, recommendation and decision orchestration, guardrails, and production systems. I am currently pursuing doctoral study in Artificial Intelligence while developing a research agenda around trustworthy AI agents and AI-enabled decision systems.
+      </p>
+    </section>
 
-</div>
+    <section id="research" class="section">
+      <h2>Research Interests</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>AI Agent Safety</h3>
+          <p>Detecting and preventing unsafe agent actions, especially when agents interact with tools, APIs, files, browsers, and external systems.</p>
+        </article>
+        <article class="card">
+          <h3>Prompt Injection & Adversarial Agents</h3>
+          <p>Understanding how untrusted instructions propagate through agent workflows and designing defenses that remain effective under realistic attacks.</p>
+        </article>
+        <article class="card">
+          <h3>Constraint-Aware Decision Systems</h3>
+          <p>Decision orchestration that optimizes utility while respecting safety constraints, policies, business rules, user preferences, and system limits.</p>
+        </article>
+        <article class="card">
+          <h3>Evaluation & Benchmarks</h3>
+          <p>Building reproducible evaluations for agent reliability, policy compliance, attack resistance, and failure modes beyond conventional model accuracy.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+      <p class="muted">Research manuscripts and publications will be listed here as they become available.</p>
+    </section>
+
+    <section id="education" class="section two-column">
+      <div>
+        <h2>Education</h2>
+        <div class="item">
+          <h3>PhD in Artificial Intelligence</h3>
+          <p>University of the Cumberlands · In progress</p>
+        </div>
+        <div class="item">
+          <h3>MS in Computer Science</h3>
+          <p>Maharishi International University</p>
+        </div>
+        <div class="item">
+          <h3>BEng in Electrical Engineering & Automation</h3>
+          <p>Hangzhou Dianzi University</p>
+        </div>
+      </div>
+      <div>
+        <h2>Current Directions</h2>
+        <ul class="clean-list">
+          <li>Secure and policy-aware AI agents</li>
+          <li>Agent tool-use risk evaluation</li>
+          <li>Prompt-injection defenses</li>
+          <li>AI decision orchestration</li>
+          <li>Real-world evaluation methodology</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Shuhan Sun · <a href="https://orcid.org/0009-0004-0657-4600" target="_blank" rel="noreferrer">ORCID 0009-0004-0657-4600</a></p>
+    </footer>
+  </main>
 </body>
 </html>
